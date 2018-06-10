@@ -97,7 +97,7 @@ public class Main extends Application {
 	    }.start();
 	    
 	    canvas.setOnMouseClicked((MouseEvent e) -> {
-	    	if (playButton.clicked(e.getSceneX(), e.getSceneY())) {
+	    	if (menu && playButton.clicked(e.getSceneX(), e.getSceneY())) {
 	    		menu = false;
 	    		menuDrawn = false;
 	    		
@@ -111,12 +111,13 @@ public class Main extends Application {
 	    		direction = 0;
 	    	}
 	    	
-	    	if (exitButton.clicked(e.getSceneX(), e.getSceneY())) {
+	    	if (menu && exitButton.clicked(e.getSceneX(), e.getSceneY())) {
 	    		Platform.exit();
 	    	}
 	    	
 	    	if (dead && menuButton.clicked(e.getSceneX(), e.getSceneY())) {
 	    		dead = false;
+	    		deadDrawn = false;
 	    		menu = true;
 	    	}
 	    });
