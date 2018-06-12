@@ -17,8 +17,11 @@ public class Snake extends ArrayList<SnakeTile> {
 	
 	private int score;
 	
+	private double lengthMins = 5;
+	
 	private int t = 0;
 	private int tDivide = 15;
+	private int time = (int) (3600 * lengthMins) / tDivide;
 	
 	private Grid grid;
 	private AppleManager appleManager;
@@ -36,7 +39,7 @@ public class Snake extends ArrayList<SnakeTile> {
 	}
 	
 	public void update(int d) {
-		if (t % 1200 == 0 && tDivide > 0) {
+		if (t % time == 0 && tDivide > 1) {
 			tDivide--;
 		}
 		
