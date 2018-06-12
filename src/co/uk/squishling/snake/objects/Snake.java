@@ -18,6 +18,7 @@ public class Snake extends ArrayList<SnakeTile> {
 	private int score;
 	
 	private int t = 0;
+	private int tDivide = 15;
 	
 	private Grid grid;
 	private AppleManager appleManager;
@@ -35,7 +36,11 @@ public class Snake extends ArrayList<SnakeTile> {
 	}
 	
 	public void update(int d) {
-        if (t % 12 == 0) {
+		if (t % 1200 == 0 && tDivide > 0) {
+			tDivide--;
+		}
+		
+        if (t % tDivide == 0) {
         	direction = d;
     		
     		Tile tile = findTile(direction);

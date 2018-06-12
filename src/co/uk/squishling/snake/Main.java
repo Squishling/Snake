@@ -106,7 +106,7 @@ public class Main extends Application {
 	    		
 	    		appleManager.create(false);
 	    		
-	    		snake = new Snake(grid, appleManager, 10);
+	    		snake = new Snake(grid, appleManager, 3);
 	    		
 	    		direction = 0;
 	    	}
