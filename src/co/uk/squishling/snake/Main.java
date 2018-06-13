@@ -7,6 +7,7 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.VPos;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -23,7 +24,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 	private Pane root;
-	private Scene scene;
+	private static Scene scene;
 	private Canvas canvas;
 	
 	private Grid grid;
@@ -100,6 +101,8 @@ public class Main extends Application {
 	    	if (menu && playButton.clicked(e.getSceneX(), e.getSceneY())) {
 	    		menu = false;
 	    		menuDrawn = false;
+	    		
+	    		scene.setCursor(Cursor.NONE);
 	    		
 	    		grid = new Grid(30, 30, WIDTH, HEIGHT);
 	    		appleManager = new AppleManager(grid, WIDTH, HEIGHT);
@@ -214,6 +217,7 @@ public class Main extends Application {
 	
 	public static void die() {
 		dead = true;
+		scene.setCursor(Cursor.DEFAULT);
 	}
 	
 	public static void main(String[] args) {
