@@ -68,10 +68,10 @@ public class Snake extends ArrayList<SnakeTile> {
     			
     			if (grid.get(tile.getGridX(), tile.getGridY()).getID() == Id.APPLE) {
     				appleManager.create(false);
-    				score += 5;
+    				score += 8;
     			} else {
         			appleManager.setSuperApple(false);
-    				score += 25;
+    				score += 64;
     			}
     		}
     		
